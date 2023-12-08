@@ -30,14 +30,15 @@
           };
         };
         behaviors {
-          bhm: balanced_homerow_mods {
+          pt: preferred_mod_tap {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
-              tapping-term-ms = <200>;    // <---[[moderate duration]]
-              quick-tap-ms = <0>;
-              flavor = "balanced";
-              bindings = <&kp>, <&kp>;
-          };
+              flavor = "tap-preferred";
+              tapping-term-ms = <200>;
+              quick-tap-ms = <200>;
+              require-prior-idle-ms = <125>;
+              bindings = <&kp>, <&kp>;;
+          }
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -51,7 +52,7 @@
                         label = "Base";
                         bindings = <
    &none &kp Q        &kp W        &kp F        &kp P          &kp G          &kp J          &kp L           &kp U        &kp Y       &kp SEMI     &none
-   &none &bhm LSHFT A &bhm LGUI R  &bhm LALT S  &bhm LCTRL T   &kp D          &kp H          &bhm RCTRL N    &bhm RALT E  &bhm RGUI I &bhm RSHFT O &none
+   &none &pt LSHFT A  &pt LGUI R   &pt LALT S   &pt LCTRL T    &kp D          &kp H          &pt RCTRL N     &pt RALT E   &pt RGUI I  &pt RSHFT O  &none
    &none &kp Z        &kp X        &kp C        &kp V          &kp B          &kp K          &kp M           &kp COMMA    &kp DOT     &kp SQT      &none
                                    &mt LGUI DEL &mt LCTRL BSPC &lt NUMBER ESC &lt SYMBOL RET &mt LSHFT SPACE &mt LALT TAB
                         >;
