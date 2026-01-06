@@ -114,5 +114,17 @@
                                     &out OUT_TOG &tt LCTRL BSPC &trans         &trans         &tt LSHFT SPACE &bt BT_CLR
                         >;
                 };
+
+                extra_1 {
+                        status = "reserved";
+                };
+
+                extra_2 {
+                        status = "reserved";
+                };
+
+                extra_3 {
+                        status = "reserved";
+                };
         };
 };
